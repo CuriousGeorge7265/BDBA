@@ -10,6 +10,14 @@ dsTitanic$Age[is.na(dsTitanic$Age)] <-
 
 colSums(is.na(dsTitanic.Train))
 colSums(is.na(dsTitanic.Test))
+## Drop empty rows 
+which(dsTitanic.Train$Embarked == "")
+
+dsTitanic.Train <- 
+  dsTitanic.Train[-which(dsTitanic.Train$Embarked == ""), ]
+
+dsTitanic.Train$Embarked <- factor(dsTitanic.Train$Embarked)
+dsTitanic.Test$Embarked <- factor(dsTitanic.Test$Embarked)
 
 
 
