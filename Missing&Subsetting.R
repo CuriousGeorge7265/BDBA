@@ -8,6 +8,10 @@ dsTitanic[complete.cases(dsTitanic),]
 dsTitanic$Age[is.na(dsTitanic$Age)] <- 
   mean(dsTitanic$Age,na.rm=TRUE)
 
+colSums(is.na(dsTitanic.Train))
+colSums(is.na(dsTitanic.Test))
+
+
 
 #---------
 # Make training and test sets
